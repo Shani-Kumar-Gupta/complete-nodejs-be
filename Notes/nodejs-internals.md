@@ -2,7 +2,7 @@
 
 ## NodeJS Major Components:
 * JavaScript Runtime Environment: Google V8 Engine
-* Event loop: Libuv
+* Event loop: Libuv (Handling File System access, asynchronous operations, networking and cuncurrency)
 * Standard Library (Modules)
   * FS Module
   * buffer: To handle binary data
@@ -16,3 +16,9 @@
   * readline
   * zlib
   * tls
+
+## Misconceptions:
+* NodeJS is single threaded. (Depends what parts of code we are taking about because we have thread pool as well).
+* NodeJS uses thread pool for all IO operations. Thread pool need to be block while IO.
+* Event Loop runs on one thread. V8/JavaScript runon another thread.
+* setImmediate vs process.nextTick() 
