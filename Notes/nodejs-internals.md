@@ -22,3 +22,29 @@
 * NodeJS uses thread pool for all IO operations. Thread pool need to be block while IO.
 * Event Loop runs on one thread. V8/JavaScript runon another thread.
 * setImmediate vs process.nextTick() 
+
+## How NodeJS Code Executes?
+
+[index.js] --- Executes using ---> node index.js --- Creates ---> Node Process [Each Process has Main Thread and Thread Pool(Executes CPU Intensive Task)]
+
+By Default Thread -> 4
+Upto -> 128 [We can control the thread]
+
+CPU Intensive Task:
+* FS
+* Crypto
+* Compression
+
+Main Thread Execution Sequence:
+* Init Project
+* Top level code execution
+* Require module loading
+* Start Event Loop
+
+Event Loop execution sequence:
+* Expired timmer callbacks execution
+  * setTimeout
+  * setInterval
+* IO Pooling
+* setImmediate callback executions
+* Closed callback
