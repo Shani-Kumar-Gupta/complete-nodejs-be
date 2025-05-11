@@ -18,4 +18,13 @@
 
 =============== Embedded Documents ======================
 
+* insert embedded document for existing document-
+db.students.update({ name: "Shani Kumar Gupta"}, {$set: {idCards: { hasPanCard: false, hasAdhaarCard: true }}});
 
+* update all document once-
+db.students.updateMany({}, {$set: {hobbies: ['Anime', 'Cooking']}});
+
+======== Search Docuemnts (Single or Nested Doc) =========
+db.students.find({ name: "Shani Kumar Gupta"});
+db.students.find({ hobbies: 'Cooking'});
+db.students.find({ 'idCards.hasPanCard': false });
