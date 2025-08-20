@@ -29,10 +29,10 @@ const server = http.createServer(
     } else {
       res.setHeader('Content-Type', 'text/html');
       res.write(`
-    <html>
-    <head><title>My Web</title></head>
-    <body>Hello From <b>Nodejs</b> Server</body>
-    </html>
+        <html>
+        <head><title>My Web</title></head>
+        <body>Hello From <b>Nodejs</b> Server</body>
+        </html>
     `);
       res.end();
     }
